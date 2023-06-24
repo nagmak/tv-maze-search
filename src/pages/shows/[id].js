@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { ShowContent }from '../../components/ShowContent';
 
 function Page(props) {
