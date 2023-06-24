@@ -8,8 +8,7 @@ export const ShowContentCard = (props) => {
     const dateEnded = showContent.ended ? new Date(showContent.ended).getFullYear() : null;
     let genres = '';
     let days = '';
-    console.log('sjfkjdf', showContent)
-    console.log(showContent.genres)
+
     if (showContent.genres) {
       showContent.genres.forEach((genre, i) => {
         if (i < showContent.genres.length - 1) {
@@ -54,7 +53,7 @@ export const ShowContentCard = (props) => {
         
         {showContent.schedule && (days || showContent.schedule.time || showContent.schedule.runtime) ? (
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            <b>Schedule:</b> {days ? days: null}s at {showContent.schedule.time ? showContent.schedule.time: null} ({showContent.runtime ? showContent.runtime: null} min)
+            <b>Schedule:</b> {days ? days: null}s at {showContent.schedule?.time ? showContent.schedule.time: null} ({showContent.runtime ? showContent.runtime: null} min)
           </Typography>
         ): null}
 
