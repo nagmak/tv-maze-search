@@ -14,7 +14,7 @@ export const HomeContent = () => {
     const { data } = await axios.get(
       `https://api.tvmaze.com/search/shows?q=${query}`
     );
-    console.log(data);
+    
     setSearchResults(data);
   }, []);
 

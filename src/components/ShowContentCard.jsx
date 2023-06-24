@@ -1,32 +1,26 @@
 import React from "react";
-import { Rating, Link, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+import { Rating, Link, Card, CardContent, Typography } from '@mui/material';
 import Image from 'next/image'
+import { convertArrayToString } from "src/utils/contentUtils";
 
 export const ShowContentCard = (props) => {
-    const showContent = props.props;
+    const { showContent } = props;
+
+    // Calculate premiere and end dates if they are provided
     const datePremiered = showContent.premiered ? new Date(showContent.premiered).getFullYear(): null;
     const dateEnded = showContent.ended ? new Date(showContent.ended).getFullYear() : null;
+
     let genres = '';
     let days = '';
 
+    // Converts the genres array into a string
     if (showContent.genres) {
-      showContent.genres.forEach((genre, i) => {
-        if (i < showContent.genres.length - 1) {
-          genres = genres + genre + ' | '
-        } else {
-          genres = genres + genre
-        }
-      })
+      genres = convertArrayToString(showContent.genres, 'pipe');
     }
 
+    // Converts the days array into a string
     if (showContent.schedule && showContent.schedule.days) {
-      showContent.schedule?.days?.forEach((day, i) => {
-        if (i < showContent.schedule.days.length - 1) {
-          days = days + day + ', '
-        } else {
-          days = days + day
-        }
-      })
+      days = convertArrayToString(showContent.schedule.days, 'comma');
     }
 
   return (
@@ -38,12 +32,13 @@ export const ShowContentCard = (props) => {
 
       { showContent.network?.name || datePremiered || dateEnded ? (
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            <b>Network:</b>
+            <b>Network: </b>
             {showContent.network?.country?.code ? (
               <Image
                 src={`https://flagcdn.com/w20/${showContent.network.country.code.toLowerCase()}.png`}
                 alt={`${showContent.network.country.code} flag`}
                 width={20}
+                height={12}
               />
             ) : null}
 

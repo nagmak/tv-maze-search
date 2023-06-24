@@ -1,6 +1,6 @@
 import React from "react";
 import Link from 'next/link'
-import { Card, CardHeader, CardMedia, CardActionArea, ButtonBase } from "@mui/material";
+import { Card, CardHeader, CardMedia, CardActionArea } from "@mui/material";
 
 export const SearchResult = (props) => {
   const { show } = props;

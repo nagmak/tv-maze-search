@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Box, Typography, Stack } from "@mui/material";
 import parse from 'html-react-parser';
 import { ShowContentCard } from './ShowContentCard'
-import useMediaQuery from '@mui/material/useMediaQuery';
-
 
 export const ShowContent = (props) => {
-  const showContent = props.props;
+  const { showContent } = props;
+
+  // Checks if the DOM is loaded before parsing the summary string
   const [domLoaded, setDomLoaded] = useState(false);
   let showSummary;
 
@@ -14,12 +14,10 @@ export const ShowContent = (props) => {
     setDomLoaded(true);
   }, []);
 
-  if (domLoaded) {
-    showSummary = parse(showContent.summary);
+  if (domLoaded && showContent?.summary) {
+    showSummary = parse(showContent?.summary);
   }
 
-
-  console.log(showContent)
   return (
     <>
     <Box
@@ -32,7 +30,7 @@ export const ShowContent = (props) => {
       }}
     >
       <Typography variant="h3" component="h1">
-        { showContent.name ? showContent.name : null }
+        { showContent?.name ? showContent.name : null }
       </Typography>
       <div style={{ marginTop: "120px" }} />
     </Box>
@@ -49,8 +47,8 @@ export const ShowContent = (props) => {
           padding: "24px",
           maxHeight: { md: 400 },
         }}
-        alt={showContent.name ? showContent.name: ''}
-        src={showContent.image.original || showContent.image.medium}
+        alt={showContent?.name ? showContent.name: ''}
+        src={showContent?.image?.original || showContent?.image?.medium}
       />
       </div>
     <Box
@@ -67,7 +65,7 @@ export const ShowContent = (props) => {
         </Typography>
         <div style={{ marginTop: "120px" }} />
       </Box>
-      <ShowContentCard props={showContent}></ShowContentCard>
+      <ShowContentCard showContent={showContent}></ShowContentCard>
       </Stack>
       </>
   );

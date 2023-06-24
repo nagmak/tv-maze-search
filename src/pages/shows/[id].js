@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { ShowContent }from '../../components/ShowContent';
 
 function Page(props) {
-  return <ShowContent props={props.data}/>;
+  return <ShowContent showContent={props.data}/>;
 }
 
   // This gets called on every request
