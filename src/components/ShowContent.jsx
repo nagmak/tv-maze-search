@@ -29,7 +29,7 @@ export const ShowContent = (props) => {
         padding: "24px"
       }}
     >
-      <Typography variant="h3" component="h1">
+      <Typography variant="h3" component="h1" color="darksalmon">
         { showContent?.name ? showContent.name : null }
       </Typography>
       <div style={{ marginTop: "120px" }} />
@@ -60,7 +60,7 @@ export const ShowContent = (props) => {
           padding: "24px"
         }}
       >
-        <Typography variant="body1">
+        <Typography variant="body1" color="darksalmon">
         { showSummary ? showSummary: null }
         </Typography>
         <div style={{ marginTop: "120px" }} />

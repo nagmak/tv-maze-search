@@ -27,7 +27,7 @@ export const HomeContent = () => {
         alignItems: "center",
       }}
     >
-      <Typography variant="h3" component="h1">
+      <Typography variant="h3" component="h1" color="darksalmon">
         TV Maze Search
       </Typography>
       <SearchBar onSearch={handleSearch} />

@@ -31,7 +31,7 @@ export const ShowContentCard = (props) => {
       </Typography>
 
       { showContent.network?.name || datePremiered || dateEnded ? (
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          <Typography sx={{ fontSize: 14 }} color="#fff" gutterBottom>
             <b>Network: </b>
             {showContent.network?.country?.code ? (
               <Image
@@ -47,37 +47,37 @@ export const ShowContentCard = (props) => {
         ): null}
         
         {showContent.schedule && (days || showContent.schedule.time || showContent.schedule.runtime) ? (
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          <Typography sx={{ fontSize: 14 }} color="#fff" gutterBottom>
             <b>Schedule:</b> {days ? days: null}s at {showContent.schedule?.time ? showContent.schedule.time: null} ({showContent.runtime ? showContent.runtime: null} min)
           </Typography>
         ): null}
 
         { showContent.status ? (
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          <Typography sx={{ fontSize: 14 }} color="#fff" gutterBottom>
             <b>Status:</b> {showContent.status}
           </Typography>
         ): null}
 
         { showContent.type ? (
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          <Typography sx={{ fontSize: 14 }} color="#fff" gutterBottom>
             <b>Show Type:</b> {showContent.type}
           </Typography>
         ) : null}
 
         { showContent.genres ? (
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            <Typography sx={{ fontSize: 14 }} color="#fff" gutterBottom>
             <b>Genres:</b> {genres}
            </Typography>
           ): null
         }
 
        { showContent.officialSite ? (
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          <Typography sx={{ fontSize: 14 }} color="#fff" gutterBottom>
             <b>Official site:</b> <Link href={showContent.officialSite} underline="none">{showContent.officialSite}</Link>
           </Typography>
         ): null }
 
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        <Typography sx={{ fontSize: 14 }} color="#fff" gutterBottom>
         <Rating name="half-rating-read" max={10} precision={0.5} defaultValue={2.5} value={showContent.rating?.average ? showContent.rating.average : 0} readOnly /> ( votes)
         </Typography>
       </CardContent>

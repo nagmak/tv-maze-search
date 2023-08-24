@@ -14,7 +14,7 @@ export const SearchResults = (props) => {
         alignSelf: "stretch",
       }}
     >
-      <Typography variant="h4" component="h2">
+      <Typography variant="h4" component="h2" color="darksalmon">
         Search Results
       </Typography>
       <Grid container spacing={2} style={{ marginTop: "12px" }}>

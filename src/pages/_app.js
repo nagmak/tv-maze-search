@@ -5,6 +5,10 @@ import "src/styles/global.css"
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
+    background: {
+      default: 'antiquewhite',
+      paper: 'darkslategray'
+    },
     breakpoints: {
       values: {
         xs: 0,

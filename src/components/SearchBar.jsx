@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { Box, TextField, Button } from "@mui/material";
+import { DropdownMenu } from "./DropdownMenu";
 
 export const SearchBar = (props) => {
   const { onSearch } = props;
@@ -25,15 +26,16 @@ export const SearchBar = (props) => {
         marginTop: "24px",
       }}
     >
+      <DropdownMenu sx={{ marginRight: '8px'}}/>
       <TextField
         id="query"
         variant="outlined"
-        placeholder="TV Show Query"
+        placeholder="Search TVMaze"
         value={input}
         onChange={handleInputChanged}
-        style={{ flex: 1 }}
+        style={{ flex: 1, marginRight: '8px', marginLeft: '8px', background: 'darksalmon', color: 'darkslategray', borderRadius: '4px' }}
       />
-      <Button variant="contained" color="primary" onClick={handleSearchClicked}>
+      <Button variant="contained" color="primary" onClick={handleSearchClicked} sx={{ backgroundColor: 'darkslategray', color: 'darksalmon'}}>
         Search
       </Button>
     </Box>
