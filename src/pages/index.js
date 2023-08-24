@@ -5,10 +5,10 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Medimap TVMaze Coding Exercise</title>
+        <title>TV Maze Search</title>
         <meta
           name="description"
-          content="TVMaze Coding Exercise for Medimap Engineering Candidates"
+          content="TV Maze Search"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

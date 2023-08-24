@@ -28,7 +28,7 @@ export const HomeContent = () => {
       }}
     >
       <Typography variant="h3" component="h1">
-        Medimap TVMaze Coding Exercise
+        TV Maze Search
       </Typography>
       <SearchBar onSearch={handleSearch} />
       <div style={{ marginTop: "120px" }} />
