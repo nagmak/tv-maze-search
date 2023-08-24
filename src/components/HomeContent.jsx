@@ -31,8 +31,13 @@ export const HomeContent = () => {
       <Typography variant="h3" component="h1" color="darksalmon">
         TV Maze Search
       </Typography>
+      <Box sx={{
+        display: "flex",
+        flexDirection: "row",
+      }}>
       <DropdownMenu sx={{ marginRight: '8px'}}/>
       <SearchBar onSearch={handleSearch} />
+      </Box>
       <div style={{ marginTop: "120px" }} />
       {searchResults?.length ? <SearchResults tvShows={searchResults} /> : null}
     </Box>
