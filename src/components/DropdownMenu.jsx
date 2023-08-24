@@ -23,7 +23,7 @@ export const DropdownMenu = () => {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
-          sx={{ height: '100%', width: '120px', backgroundColor: 'darkslategray', color: 'darksalmon'}}
+          sx={{ marginTop: '24px', height: '56px', backgroundColor: 'darkslategray', color: 'darksalmon'}}
           startIcon={<KeyboardArrowDownIcon />}
         >
           {filterBy}
