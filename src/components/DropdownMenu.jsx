@@ -38,7 +38,6 @@ export const DropdownMenu = () => {
           }}
         >
           <MenuItem onClick={handleClose}>TV Shows</MenuItem>
-          <MenuItem onClick={handleClose}>People</MenuItem>
         </Menu>
       </div>
     );
