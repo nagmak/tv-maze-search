@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import axios from "axios";
 import { SearchBar } from "./SearchBar";
 import { SearchResults } from "./SearchResults";
+import { DropdownMenu } from "./DropdownMenu";
 
 export const HomeContent = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -30,6 +31,7 @@ export const HomeContent = () => {
       <Typography variant="h3" component="h1" color="darksalmon">
         TV Maze Search
       </Typography>
+      <DropdownMenu sx={{ marginRight: '8px'}}/>
       <SearchBar onSearch={handleSearch} />
       <div style={{ marginTop: "120px" }} />
       {searchResults?.length ? <SearchResults tvShows={searchResults} /> : null}

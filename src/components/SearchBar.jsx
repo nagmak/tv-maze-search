@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from "react";
 import { Box, TextField, Button } from "@mui/material";
-import { DropdownMenu } from "./DropdownMenu";
 
 export const SearchBar = (props) => {
   const { onSearch } = props;
@@ -26,7 +25,6 @@ export const SearchBar = (props) => {
         marginTop: "24px",
       }}
     >
-      <DropdownMenu sx={{ marginRight: '8px'}}/>
       <TextField
         id="query"
         variant="outlined"
